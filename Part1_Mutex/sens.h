@@ -6,11 +6,12 @@
 #ifdef __cplusplus 
 extern "C" {
 #endif
-  
+ 
 
 
-   extern void senns   (void *arg);
-   extern void Train   (void *arg);;
+
+   extern void sens ();
+   extern void sensInverse ();
  
 
 #ifdef __cplusplus

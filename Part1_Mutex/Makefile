@@ -1,13 +1,16 @@
 #Makefile cree par Vincent Boyer
 #Septembre 2015
+# modifié par aoudjit # Janvier 2018 
+
 
 #definition des commandes
 CC = gcc
 RM = rm
 
 #options du compilateur
-CFLAGS = -I/opt/local/include
-LDFLAGS = -L/opt/local/lib -lpng
+CFLAGS =  -Wall 
+LDFLAGS = -lpthread
+
 
 #fichiers et dossiers
 PROGNAME = Part1_Mutex
@@ -18,10 +21,10 @@ OBJ = $(SRC:.c=.o)
 all: $(PROGNAME)
 
 $(PROGNAME) : $(OBJ)
-	$(CC) $^ $(LDFLAGS) -o $@
+	$(CC) $(CFLAGS) $^  -o $@ $(LDFLAGS)
 
 %.o : %.c
-	$(CC) $(CFLAGS) $< -c
+	$(CC) $(CFLAGS) $< -c $(LDFLAGS)
 
 
 clean:
